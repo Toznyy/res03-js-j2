@@ -1,67 +1,77 @@
 // Exercice 1
 
-function add(nb1, nb2){
-	let sum=nb1+nb2;
+function add(nb1, nb2) {
+	let sum = nb1 + nb2;
 	return sum;
-	console.log(add(10,15));
 }
 
-function sub(nb1, nb2){
-	let diff=nb1+nb2;
+function sub(nb1, nb2) {
+	let diff = nb1 + nb2;
 	return diff;
 }
 
-function mult(nb1, nb2){
-	let prod=nb1*nb2;
+function mult(nb1, nb2) {
+	let prod = nb1 * nb2;
 	return prod;
 }
 
-function div(nb1, nb2){
-	let divi=nb1/nb2;
+function div(nb1, nb2) {
+	let divi = nb1 / nb2;
 	return divi;
 }
 
-function mod(nb1, nb2){
-	let rest=nb1%nb2;
+function mod(nb1, nb2) {
+	let rest = nb1 % nb2;
 	return rest;
 }
 
 // Exercice 2
 
-function askUserOperation(){
+function askUserOperation() {
 	let ope = window.prompt("Quelle opération choisis-tu ? (+ - * / ou %)");
 	return ope;
 }
 
-function askUserFirstNumber(){
+function askUserFirstNumber() {
 	let premNomb = window.prompt("Quel est le premier nombre du calcul ?")
 	return premNomb;
 }
 
-function askUserSecondNumber(){
+function askUserSecondNumber() {
 	let deuxNomb = window.prompt("Quel est le deuxième nombre du calcul ?")
 	return deuxNomb;
 }
 
 // Exercice 3
 
-function calculator(askUserOperation, askUserFirstNumber, askUserSecondNumber){
-	if (askUserOperation == +){
-		add(askUserFirstNumber, askUserSecondNumber);
+function calculator() {
+	let operation = askUserOperation();
+	let premierNombre = parseInt(askUserFirstNumber());
+	let deuxiemeNombre = parseInt(askUserSecondNumber());
+	
+	if (operation === "+") {
+		let addition = add(premierNombre, deuxiemeNombre);
+		return addition;
 	}
-	if (askUserOperation == -){
-		sub(askUserFirstNumber, askUserSecondNumber);
+	if (operation === "-") {
+		let difference = sub(premierNombre, deuxiemeNombre);
+		return difference;
 	}
-	if (askUserOperation == *){
-		mult(askUserFirstNumber, askUserSecondNumber);
+	if (operation === "*") {
+		let multiplication = mult(premierNombre, deuxiemeNombre);
+		return multiplication;
 	}
-	if (askUserOperation == /){
-		div(askUserFirstNumber, askUserSecondNumber);
+	if (operation === "/") {
+		let division = div(premierNombre, deuxiemeNombre);
+		return division;
 	}
-	if (askUserOperation == %){
-		mod(askUserFirstNumber, askUserSecondNumber);
+	if (operation === "%") {
+		let reste = mod(premierNombre, deuxiemeNombre);
+		return reste;
 	}
-	else{
-		return alert("Utilise une autre opération")
+	else {
+		return alert("Utilise une autre opération");
 	}
 }
+
+alert(calculator());
